@@ -85,7 +85,7 @@ class _MyAppState extends State<MyApp> {
                             themeColor: Theme.of(context).primaryColor,
                             identifier: "iosBook",
                             scrollDirection: EpubScrollDirection.ALLDIRECTIONS,
-                            allowSharing: true,
+                            allowSharing: false,
                             enableTts: true,
                             nightMode: true,
                           );
