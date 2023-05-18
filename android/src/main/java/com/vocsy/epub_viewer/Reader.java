@@ -108,30 +108,30 @@ public class Reader implements OnHighlightListener, ReadLocatorListener, FolioRe
     }
 
     private void getHighlightsAndSave() {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                ArrayList<HighLight> highlightList = null;
-                ObjectMapper objectMapper = new ObjectMapper();
-                try {
-                    highlightList = objectMapper.readValue(
-                            loadAssetTextAsString("highlights/highlights_data.json"),
-                            new TypeReference<List<HighlightData>>() {
-                            });
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+        // new Thread(new Runnable() {
+        //     @Override
+        //     public void run() {
+        //         ArrayList<HighLight> highlightList = null;
+        //         ObjectMapper objectMapper = new ObjectMapper();
+        //         try {
+        //             highlightList = objectMapper.readValue(
+        //                     loadAssetTextAsString("highlights/highlights_data.json"),
+        //                     new TypeReference<List<HighlightData>>() {
+        //                     });
+        //         } catch (IOException e) {
+        //             e.printStackTrace();
+        //         }
 
-                if (highlightList == null) {
-                    folioReader.saveReceivedHighLights(highlightList, new OnSaveHighlight() {
-                        @Override
-                        public void onFinished() {
-                            //You can do anything on successful saving highlight list
-                        }
-                    });
-                }
-            }
-        }).start();
+        //         if (highlightList == null) {
+        //             folioReader.saveReceivedHighLights(highlightList, new OnSaveHighlight() {
+        //                 @Override
+        //                 public void onFinished() {
+        //                     //You can do anything on successful saving highlight list
+        //                 }
+        //             });
+        //         }
+        //     }
+        // }).start();
     }
 
 
